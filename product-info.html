@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/product-info.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="js/headerLoader.js"></script>
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3 id="productName"></h3>
+        </div>
+        <div class="col text-end">
+          <button id="addCart" type="submit" class="btn btn-success">Añadir al carrito</button>
+          <button id="addGoCart" type="submit" class="btn btn-dark">Añadir e ir al carrito</button>
+        </div>
+      </div>
+
+      <hr class="my-3">
+      <section id="product-info-section">
+        <!-- carousel -->
+        <div class="container w-75">
+          <div id="product-images-carousel" class="carousel slide w-75" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-indicators">
+            </div>
+            <div class="carousel-inner">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#product-images-carousel"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#product-images-carousel"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <!-- carousel fin -->
+
+        <div class="container">
+          <dl>
+            <dt>Descripción</dt>
+            <dd>
+              <p id="productDescription"></p>
+            </dd>
+
+            <dt>Precio</dt>
+            <dd>
+              <p id="productCost"></p>
+            </dd>
+
+            <dt>Vendidos</dt>
+            <dd>
+              <p id="productSoldCount"></p>
+            </dd>
+          </dl>
+        </div>
+      </section>
+
+      <section class="container">
+        <h5><b>Productos relacionados:</b></h5>
+
+        <div class="row text-center text-lg-left pt-2" id="related-products-gallery">
+
+        </div>
+
+        <a type="button" class="btn btn-dark btn-lg btn-block" href="products.html">Ver productos</a>
+      </section>
+
+      <section class="container bg-light border m-3 p-4">
+        <hr>
+        <form class="needs-validation" id="comment-form">
+          <h2>Publica tu comentario</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="user-name">Nombre</label>
+              <input type="text" class="form-control" name="user-name" placeholder="" value="">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label for="comment-content">Contenido</label>
+              <textarea class="form-control" name="comment-content" rows="3"></textarea>
+            </div>
+          </div>
+
+          <p id="user-stars-title">Puntaje</p>
+          <div id="user-review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+
+          <hr class="mb-4">
+          <button class="btn btn-primary" type="submit">Publicar</button>
+        </form>
+      </section>
+
+      <section>
+        <h2 class="mt-4">Comentarios:</h2>
+        <div class="col col-md-8 mx-auto mt-4" id="comments-container">
+          <div class="list-group" id="comment-list">
+
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

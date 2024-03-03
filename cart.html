@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/headerLoader.js"></script>
+</head>
+
+<body>
+  <div id="header-container"></div>
+  <main>
+
+
+    <div class="container">
+      <h1 class="text-center">Carrito de Compras</h1>
+      <br>
+      <h2 class="fs-3">Articulos a Comprar</h2>
+      <table class="table" id="cart">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="cart-products">
+        </tbody>
+      </table>
+
+      <div>
+        <h2>Tipo de envío</h2>
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="radios">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="costoenvio" id="radio15" value="15" checked>
+              <label class="form-check-label" for="radio15">
+                Premium 2 a 5 días (15%)
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="costoenvio" id="radio7" value="7">
+              <label class="form-check-label" for="radio7">
+                Express 5 a 8 días (7%)
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="costoenvio" id="radio5" value="5">
+              <label class="form-check-label" for="radio5">
+                Standar 12 a 15 días (5%)
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputAddress" class="form-label">Calle</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="" required>
+          </div>
+          <div class="col-md-3">
+            <label for="inputAddress2" class="form-label">Número</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="" required>
+          </div>
+          <div class="col-6">
+            <label for="inputAddress" class="form-label">Esquina</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="" required>
+          </div>
+
+          <hr>
+          <h2>Costos</h2> 
+          <div class="text">
+            <div class="border rounded-top p-2 d-flex justify-content-between">
+              <div>
+                <p class="text-left m-0">Subtotal</p>
+                <p class="text-left text-muted m-0">Costo unitario del producto por cantidad</p>
+              </div>
+              <p class="text-right text-muted">U$S <span id="cart-subtotal">0</span></p>
+            </div>
+            <div class="border p-2 d-flex justify-content-between">
+              <div>
+                <p class="text-left m-0">Costo de envio</p>
+                <p class="text-left font text-muted m-0">Segun tipo de envio</p>
+              </div>
+              <p class="text-right text-muted">U$S <span id="cart-envio">0</span></p>
+            </div>
+            <div class="border rounded-bottom p-2 d-flex justify-content-between">
+              <p class="text-left m-0">Total ($)</p>
+              <p class="text-right fw-bold">U$S <span id="cart-total">0</span></p>
+            </div>
+          </div>
+          <hr>
+
+          <div>
+            <h2>Forma de pago</h2>
+            <span id='test' class="d-none text-danger">No ha seleccionado</span>
+            <a class="" id='tyc' data-bs-toggle="modal" data-bs-target="#exampleModal"
+              data-bs-whatever="@mdo">Seleccionar</a>
+          </div>
+
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Comprar</button>
+          </div>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="needs-validation" novalidate>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="formadepago" id="tarjeta" value="tarjeta"
+                        required>
+                      <label class="form-check-label" for="tarjeta">
+                        Tarjeta de crédito
+                      </label>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                      <div class="col-md-6 m-2">
+                        <label for="ntarjeta" class="form-label">Número de tarjetas</label>
+                        <input type="text" class="form-control" name="ntarjeta" id="ntarjeta" placeholder="" required>
+                      </div>
+                      <div class="col-md-3 m-2">
+                        <label for="cseguridad" class="form-label">Código de seg.</label>
+                        <input type="text" class="form-control" name="cseguridad" id="cseguridad" placeholder="" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 m-2">
+                      <label for="vencimiento" class="form-label">Vencimiento (MM/AA)</label>
+                      <input type="text" class="form-control" name="vencimiento" id="vencimiento" placeholder="" required>
+                    </div>
+                    <br>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="formadepago" id="transferencia" value="transfer"
+                        required>
+                      <label class="form-check-label" for="transferencia">
+                        Transferencia Bancaria
+                      </label>
+                    </div>
+                    <hr>
+                    <div class="col-md-6 m-2">
+                      <label for="ncuenta" class="form-label">Número de cuenta</label>
+                      <input type="text" class="form-control" name="ncuenta" id="ncuenta" placeholder="" required>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-success d-none" id="comprado" role="alert">
+            ¡Has comprado con éxito!
+          </div>
+        </form>      
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>
